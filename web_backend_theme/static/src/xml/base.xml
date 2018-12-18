@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="Menu">
+        <!-- 增加返回一级菜单主页快捷键 -->
+        <t t-jquery=".o_menu_brand" t-operation="attributes">
+            <attribute name="accesskey">b</attribute>
+        </t>
+    </t>
+
+    <t t-extend="UserMenu">
+        <!-- 不显示导航栏用户名称 -->
+        <t t-jquery=".oe_topbar_name" t-operation="replace"/>
+    </t>
+
+    <t t-extend="UserMenu.Actions">
+        <!-- 导航栏用户菜单隐藏(兼容其他模块) -->
+        <t t-jquery="a[data-menu='documentation']" t-operation="attributes">
+            <attribute name="class">dropdown-item o_invisible_modifier</attribute>
+        </t>
+        <t t-jquery="a[data-menu='support']" t-operation="attributes">
+            <attribute name="class">dropdown-item o_invisible_modifier</attribute>
+        </t>
+        <t t-jquery="div[class='dropdown-divider']" t-operation="attributes">
+            <attribute name="class">dropdown-item o_invisible_modifier</attribute>
+        </t>
+        <t t-jquery="a[data-menu='account']" t-operation="attributes">
+            <attribute name="class">dropdown-item o_invisible_modifier</attribute>
+        </t>
+    </t>
+
+    <t t-extend="UserMenu.shortcuts">
+        <!-- 增加Brand快捷键说明 -->
+        <t t-jquery="tr:last" t-operation="after">
+            <tr>
+                <td align="left">Toggle brand menu</td>
+                <td>
+                    <span class="o_key">Alt</span> + <span class="o_key">b</span>
+                </td>
+                <td>
+                    <span class="o_key">Control</span> + <span class="o_key">Alt</span> + <span class="o_key">b</span>
+                </td>
+            </tr>
+        </t>
+    </t>
+</templates>

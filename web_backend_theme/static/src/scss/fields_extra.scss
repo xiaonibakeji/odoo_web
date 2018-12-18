@@ -1,0 +1,25 @@
+// Required
+.o_required_modifier {
+    /*修改必填背景颜色*/
+    &.o_input, .o_input {
+        background-color: #FFFDF8!important;
+    }
+
+    /*增加必填标签红星（*）*/
+    &.o_form_label:before {
+        content: "* ";
+        color: red;
+        margin-left: -10px
+    }
+}
+
+.o_field_widget {
+    // Many2one
+    /*修改多对一的快捷按钮颜色*/
+    &.o_field_many2one .o_external_button {
+        // padding: 0;
+        // margin-left: 2px;
+        // font-size: 19px;
+        // color: $o-brand-secondary;
+    }
+}

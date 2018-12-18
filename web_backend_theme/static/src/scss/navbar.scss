@@ -1,0 +1,50 @@
+.o_main_navbar {
+    /*修改导航栏背景色*/
+    background-color: $o-navbar-color;
+    /*修改导航栏字体粗细*/
+    font-weight: 300;
+    /*修改导航栏底边框*/
+    border-bottom: none;
+    /*修改导航栏Brand字体大小*/
+    > .o_menu_brand {
+        margin-right: 10px;
+        // font-weight: 300;
+        font-size: 18px;
+    }
+    /*修改导航栏按钮间距*/
+    > ul {
+        > li {
+            > a, > label {
+                padding: 0 15px;
+            }
+        }
+    }
+    /*修改导航栏下拉菜单样式*/
+    .dropdown-menu.show {
+        // background-color: #252a2f;
+        // border-color: #252a2f;
+        border-radius: 0;
+        min-width: 160px;
+        /*修改导航栏下拉二级菜单样式*/
+        .dropdown-header {
+            border-left: 3px solid $o-navbar-color;
+            color: $o-main-color-muted;
+            text-decoration: none;
+        }
+    }
+    .o_user_menu {
+        /*去掉导航栏用户头像左边距*/
+        margin-left: 0;
+        /*修改导航栏用户头像大小*/
+        .oe_topbar_avatar {
+            height: 24px;
+            transform: translateY(-2px);
+        }
+        /*隐藏导航栏用户头像的三角图标*/
+        > .dropdown-toggle {
+            &:after {
+                display: none !important;
+            }
+        }
+    }
+}
